@@ -16,77 +16,23 @@
     <main class="container">
         <div id="compass-bar">
             <div class="compass-direction" style="left: 0%;">W</div>
-            <div class="compass-direction" style="left: 33.33%;">S</div>
-            <div class="compass-direction" style="left: 66.66%;">E</div>
-            <div class="compass-direction" style="left: 100%;">N</div>
+            <div class="compass-direction" style="left: 25%;">S</div>
+            <div class="compass-direction" style="left: 50%;">E</div>
+            <div class="compass-direction" style="left: 75%;">N</div>
+            <div class="compass-direction" style="left: 100%;">W</div>
         </div>
         
         <section class="layout-container">
-            <svg id="wind-map" width="1488" height="716" viewBox="0 0 1488 716">
+          <svg id="wind-map" width="1488" height="716" viewBox="0 0 1488 716">
                 <!-- House layout -->
                 <polyline style="fill: none; stroke: #3498db; mix-blend-mode: source-over; stroke-dasharray: none; stroke-dashoffset: 0; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 3;" points="374,0 374,217 0,217 0,99 86,99 86,1 374,1" transform="matrix(1,0,0,1,490,203)"></polyline>
                 
                 <!-- Aerodynamic Streamlines -->
-                <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" height="804" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1132 804" width="1132">
-                    <defs />
-                    <g transform="translate(5.5,5.5)" id="page1">
-                        <rect fill="#ffffff" height="794" y="0" width="1123" x="0" />
-                        <g transform="translate(108.415748,147.417018)" id="group1">
-                            <g transform="matrix(1.000000,-0.000000,0.000000,1.000000,7.559051,498.866963)" id="shape2">
-                                <path fill="#7e7e7e" d="M-7.6,.0L900.5,.0L900.5,-7.6L900.5,-15.1L7.6,-15.1L.0,-7.6L-7.6,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M-7.6,.0L900.5,.0M900.5,-15.1L7.6,-15.1M900.5,.0L900.5,-7.6L900.5,-15.1" />
-                            </g>
-                            <g transform="matrix(0.000000,1.000000,-1.000000,0.000000,0.000000,223.979112)" id="shape3">
-                                <path fill="#7e7e7e" d="M-7.6,.0L274.9,.0L267.3,-7.6L259.8,-15.1L7.6,-15.1L.0,-7.6L-7.6,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M-7.6,.0L274.9,-0.0M259.8,-15.1L7.6,-15.1" />
-                            </g>
-                            <g transform="matrix(0.999995,0.003256,-0.003256,0.999995,172.334120,15.142437)" id="shape4">
-                                <path fill="#7e7e7e" d="M.0,.0L744.8,.0L744.8,-7.6L744.8,-15.1L.0,-15.1L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L744.8,.0M744.8,-15.1L.0,-15.1M.0,.0L.0,-7.6L.0,-15.1M744.8,.0L744.8,-7.6L744.8,-15.1" />
-                            </g>
-                            <g transform="matrix(1.000000,0.000000,-0.000000,1.000000,615.882051,231.388662)" id="shape5">
-                                <path fill="#7e7e7e" d="M-0.0,.0L292.1,.0L292.1,-7.6L292.1,-15.1L-0.0,-15.1L.0,-7.6L-0.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M-0.0,.0L292.1,.0M292.1,-15.1L-0.0,-15.1M292.1,.0L292.1,-7.6L292.1,-15.1" />
-                            </g>
-                            <g transform="matrix(0.000000,1.000000,-1.000000,0.000000,436.283577,8.467503)" id="shape6">
-                                <path fill="#7e7e7e" d="M.0,.0L207.6,.0L215.1,-7.6L207.6,-15.1L.0,-15.1L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L207.6,.0M207.6,-15.1L.0,-15.1M.0,.0L.0,-7.6L.0,-15.1" />
-                            </g>
-                            <g transform="matrix(0.999999,-0.001319,0.001319,0.999999,166.892027,231.538156)" id="shape7">
-                                <path fill="#7e7e7e" d="M.0,.0L277.0,.0L277.0,-7.6L269.4,-15.1L10.7,-15.1L3.0,-7.6L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L277.0,.0M269.4,-15.1L.0,-15.1" />
-                            </g>
-                            <g transform="matrix(-0.011353,0.999936,-0.999936,-0.011353,164.800173,7.497612)" id="shape8">
-                                <path fill="#7e7e7e" d="M.0,.0L216.4,.0L216.4,-7.6L208.8,-15.1L.0,-15.1L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L216.4,.0M208.8,-15.1L.0,-15.1M.0,.0L.0,-7.6L.0,-15.1" />
-                            </g>
-                            <g transform="translate(7.559050,231.538162)" id="shape9">
-                                <path fill="#7e7e7e" d="M7.6,.0L159.3,.0L159.3,-7.6L159.3,-15.1L-7.6,-15.1L.0,-7.6L7.6,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M7.6,.0L159.3,.0M159.3,-15.1L-7.6,-15.1" />
-                            </g>
-                            <g transform="translate(379.287741,238.666724)" id="shape10">
-                                <path fill="#7e7e7e" d="M7.6,.0L180.0,.0L180.0,-7.6L180.0,-15.1L-7.6,-15.1L.0,-7.6L7.6,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M7.6,.0L180.0,.0M180.0,-15.1L-7.6,-15.1" />
-                            </g>
-                            <g transform="translate(9.690452,176.445631)" id="shape11">
-                                <path fill="#7e7e7e" d="M.0,.0L335.7,.0L335.7,-7.6L335.7,-15.1L.0,-15.1L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L335.7,.0M335.7,-15.1L.0,-15.1M.0,.0L.0,-7.6L.0,-15.1M335.7,.0L335.7,-7.6L335.7,-15.1" />
-                            </g>
-                            <g transform="translate(489.269898,1.553308)" id="shape12">
-                                <path fill="#7e7e7e" d="M.0,.0L65.3,.0L65.3,-7.6L65.3,-15.1L-0.0,-15.1L-0.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L65.3,.0M65.3,-15.1L-0.0,-15.1M.0,.0L.0,-7.6L.0,-15.1M65.3,.0L65.3,-7.6L65.3,-15.1" />
-                            </g>
-                            <g transform="matrix(0.999999,0.001255,-0.001255,0.999999,8.416501,231.172753)" id="shape13">
-                                <path fill="#7e7e7e" d="M.0,.0L112.2,.0L112.2,-7.6L112.2,-15.1L7.5,-15.1L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L112.2,.0M112.2,-15.1L7.5,-15.1" />
-                            </g>
-                            <g transform="matrix(0.000000,1.000000,-1.000000,0.000000,669.510452,1.258031)" id="shape14">
-                                <path fill="#7e7e7e" d="M.0,.0L74.5,.0L74.5,-7.6L74.5,-15.1L.0,-15.1L.0,-7.6L.0,.0z" fill-rule="nonzero" />
-                                <path stroke-width="1" stroke="#7e7e7e" fill="none" d="M.0,.0L74.5,.0M74.5,-15.1L.0,-15.1M.0,.0L.0,-7.6L.0,-15.1M74.5,.0L74.5,-7.6L74.5,-15.1" />
-                            </g>
-                        </g>
-                    </g>
-                </svg>
+                <defs>
+                    <marker id="arrowhead" markerWidth="5" markerHeight="3.5" refX="0" refY="1.75" orient="auto">
+                        <!-- <polygon points="0 0, 5 1.75, 0 3.5" fill="#3498db"></polygon> -->
+                    </marker>
+                </defs>
             </svg>
             <p class="info">This is a 2D representation of a house layout with aerodynamic streamlines showing wind direction and intensity.</p>
         </section>
