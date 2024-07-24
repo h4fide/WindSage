@@ -4,13 +4,17 @@ const height = svg.attr("height");
 
 let forecastData = [];
 let currentForecastIndex = 0;
+let currentWindSpeed = 0;
 
 function createStreamlines(angle) {
-    const windData = [
-        { x1: 400, y1: 100, x2: 800, y2: 100 },
-        { x1: 400, y1: 200, x2: 800, y2: 200 },
-        { x1: 400, y1: 300, x2: 800, y2: 300 }
-    ];
+    const windData = [];
+    const numLines = 6; // Number of streamlines
+    const ySpacing = height / (numLines + 1);
+
+    for (let i = 1; i <= numLines; i++) {
+        const yPos = i * ySpacing;
+        windData.push({ x1: 100, y1: yPos, x2: width - 100, y2: yPos });
+    }
 
     const rotatedData = windData.map(d => {
         const centerX = (d.x1 + d.x2) / 2;
@@ -28,17 +32,29 @@ function createStreamlines(angle) {
         .data(rotatedData)
         .enter()
         .append("path")
-        .attr("d", d => `M${d.x1},${d.y1} Q${(d.x1 + d.x2) / 2},${(d.y1 + d.y2) / 2 + 50} ${d.x2},${d.y2}`)
+        .attr("d", d => {
+            const slope = (d.y2 - d.y1) / (d.x2 - d.x1);
+            let controlPointYOffset = 100; // Default control point Y offset
+            if (slope > 0) { // Line is looking up
+                controlPointYOffset += 20; // Increase spacing for lines looking up
+            } else { // Line is looking down
+                controlPointYOffset -= 20; // Decrease spacing (move control point up) for lines looking down
+            }
+            return `M${d.x1},${d.y1} Q${(d.x1 + d.x2) / 2},${(d.y1 + d.y2) / 2 + controlPointYOffset} ${d.x2},${d.y2}`;
+        })
         .attr("stroke", "#3498db")
         .attr("stroke-width", 2)
         .attr("fill", "none")
-        .attr("marker-end", "url(#arrowhead)")
+        .attr("stroke-dasharray", "5,5")
         .attr("class", "streamline");
 
     animateStreamlines();
 }
 
 function animateStreamlines() {
+    const speedFactor = 50; // Adjust this factor to control the animation speed
+    const animationDuration = speedFactor / currentWindSpeed * 500; // Duration in ms
+
     svg.selectAll(".streamline")
         .attr("stroke-dasharray", function() {
             return this.getTotalLength();
@@ -47,7 +63,7 @@ function animateStreamlines() {
             return this.getTotalLength();
         })
         .transition()
-        .duration(2000)
+        .duration(animationDuration)
         .ease(d3.easeLinear)
         .attr("stroke-dashoffset", 0)
         .on("end", animateStreamlines);
@@ -60,6 +76,7 @@ function updateWindInfo(data) {
     document.getElementById("windDirection").textContent = `${data.wind_direction}°`;
     document.getElementById("cardinalDirection").textContent = data.cardinal_direction;
 
+    currentWindSpeed = data.wind_speed;
     const angle = ((360 - data.wind_direction) * Math.PI) / 180;
     createStreamlines(angle);
 }
