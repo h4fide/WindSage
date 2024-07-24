@@ -19,14 +19,15 @@
             <div class="compass-direction" style="left: 25%;">S</div>
             <div class="compass-direction" style="left: 50%;">E</div>
             <div class="compass-direction" style="left: 75%;">N</div>
-            <div class="compass-direction" style="left: 100%;">W</div>
+
         </div>
         
         <section class="layout-container">
           <svg id="wind-map" width="1488" height="716" viewBox="0 0 1488 716">
                 <!-- House layout -->
-                <polyline style="fill: none; stroke: #3498db; mix-blend-mode: source-over; stroke-dasharray: none; stroke-dashoffset: 0; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 4; stroke-opacity: 1; stroke-width: 3;" points="374,0 374,217 0,217 0,99 86,99 86,1 374,1" transform="matrix(1,0,0,1,490,203)"></polyline>
-                
+            <div id="wind-map">
+                <img src="{{ url_for('static', filename='images/house_layout.svg') }}" alt="House Layout" width="1488" height="716">
+            </div>
                 <!-- Aerodynamic Streamlines -->
                 <defs>
                     <marker id="arrowhead" markerWidth="5" markerHeight="3.5" refX="0" refY="1.75" orient="auto">
