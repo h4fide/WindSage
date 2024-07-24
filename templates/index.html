@@ -15,27 +15,26 @@
 
     <main class="container">
         <div id="compass-bar">
-            <div class="compass-direction" style="left: 0%;">W</div>
-            <div class="compass-direction" style="left: 25%;">S</div>
-            <div class="compass-direction" style="left: 50%;">E</div>
-            <div class="compass-direction" style="left: 75%;">N</div>
+            <div class="compass-direction" style="left: 0%;">S</div>
+            <div class="compass-direction" style="left: 25%;">W</div>
+            <div class="compass-direction" style="left: 50%;">N</div>
+            <div class="compass-direction" style="left: 75%;">E</div>
+            <div class="compass-direction" style="left: 96%;">S</div>
 
         </div>
         
         <section class="layout-container">
-          <svg id="wind-map" width="1488" height="716" viewBox="0 0 1488 716">
-                <!-- House layout -->
-            <div id="wind-map">
+            <div id="wind-map-img">
                 <img src="{{ url_for('static', filename='images/house_layout.svg') }}" alt="House Layout">
             </div>
+            <svg id="wind-map" width="1488" height="716" viewBox="0 0 1488 716">
                 <!-- Aerodynamic Streamlines -->
                 <defs>
-                    <marker id="arrowhead" markerWidth="5" markerHeight="3.5" refX="0" refY="1.75" orient="auto">
-                        <!-- <polygon points="0 0, 5 1.75, 0 3.5" fill="#3498db"></polygon> -->
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
                     </marker>
+    
                 </defs>
             </svg>
-            <p class="info">This is a 2D representation of a house layout with aerodynamic streamlines showing wind direction and intensity.</p>
         </section>
 
         <section id="windInfo" class="layout-container">
@@ -50,5 +49,11 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <footer>
+        <div class="container">
+            <p>Created with passion by h4fide for a private project showcasing wind direction around my house.</p>
+            <p>Find me on <a href="https://github.com/h4fide" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
 </body>
 </html>
